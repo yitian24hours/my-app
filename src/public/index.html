@@ -1,0 +1,82 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=bar-large
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 90%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div style="margin: 10px;" name="upload_file_div">
+    <form enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit">上传文件</button>
+    </form>
+  </div>
+
+  <div id="container" style="height: 100%">
+
+  </div>
+
+  <div style="position:fixed;bottom:20px;align-items:center;
+  display: flex;
+		background-color: aliceblue;
+		border: 1px solid black;
+		justify-content: center;width:100%;" id="main_div">
+
+
+    <div style="background-color: aliceblue;
+        border: 1px solid black;" id="but_div"></div>
+
+
+    <select id="chr_reporting">
+      <option></option>
+    </select>&nbsp&nbsp&nbsp&nbsp
+    <select id="chr_number_select">
+      <option>请先点击需要查看的检测报告</option>
+    </select>&nbsp&nbsp&nbsp&nbsp
+
+    position<input type="text" id="input_min">~position_s
+    <input type="text" id="input_max">
+
+    &nbsp&nbsp<div style="background-color: aliceblue;
+        " id="value_interval_div"></div>
+    &nbsp&nbsp<div style="background-color: aliceblue;
+        border: 1px solid black;" id="search_div">
+      <button id="search">搜索</button>
+    </div>
+
+
+  </div>
+
+
+  <script type="text/javascript" src="./javascripts/jQuery.js"></script>
+  <script type="text/javascript" src="echarts.js"></script>
+  <script type="text/javascript" src="./javascripts/test.js"></script>
+
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript" src="javascripts/index.js">
+
+  </script>
+</body>
+
+</html>

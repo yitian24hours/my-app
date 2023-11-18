@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+//基因检测报告
+model GeneReporting {
+  id                Int                 @id @default(autoincrement())
+  reportingName     String              @unique
+  des               String?
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  geneReportingData GeneReportingData[]
+  version           Int                 @default(0)
+}
+
+//基因检测报告数据
+model GeneReportingData {
+  id              Int           @id @default(autoincrement())
+  chrType         String
+  chrStart        Int
+  chrEnd          Int
+  chrValue        Int
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  geneReportingId Int
+  geneReporting   GeneReporting? @relation(fields: [geneReportingId], references: [id])
+  version         Int           @default(0)
+}
