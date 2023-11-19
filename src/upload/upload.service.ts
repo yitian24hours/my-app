@@ -4,7 +4,7 @@ import { ReadLine } from 'readline';
 import { CreateUploadDto } from './dto/create-upload.dto';
 import { UpdateUploadDto } from './dto/update-upload.dto';
 import LineByLine = require('n-readlines');
-import { PathLike, readdir, readdirSync } from 'fs';
+import { PathLike, readdir, readdirSync, unlink, unlinkSync } from 'fs';
 import { join } from 'path';
 import { GeneReportingService } from 'src/prisma/gene-reporting/gene-reporting.service';
 import { CreateGeneReportingDto } from 'src/prisma/gene-reporting/dto/create-gene-reporting.dto';
@@ -54,6 +54,7 @@ export class UploadService {
 
     };
     try {
+      unlinkSync(join(path, dir[0]));
       return await prisma.geneReporting.create({
         data: {
           reportingName: fileName,

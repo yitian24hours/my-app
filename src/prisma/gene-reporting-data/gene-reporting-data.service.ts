@@ -116,6 +116,9 @@ export class GeneReportingDataService {
   async charDataInit(){
     try {
       const resultFindFirstReporting = await prisma.geneReporting.findMany();
+      if(resultFindFirstReporting.length === 0){
+        return {};
+      }
       const resultFindChrTypeByReportingId = await this.findChrTypeByReportingId(resultFindFirstReporting[0].id);
       let  findGeneReportingDataByChrTypeDto = new FindGeneReportingDataByChrTypeDto();
       findGeneReportingDataByChrTypeDto.chrType = resultFindChrTypeByReportingId[0].chrType;

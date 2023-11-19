@@ -54,6 +54,7 @@ $("#chr_reporting").change(()=>{
             $("#input_max").val("")
             $("#input_min").val("")
             $("#value_interval_div").text("")
+
             const initMinValue = data.data.resultFindMaxMinValue[0]._min.chrStart
             const initMaxValue = data.data.resultFindMaxMinValue[0]._max.chrEnd
             reportingId = data.data.reportingId;
@@ -185,6 +186,13 @@ $.ajax({
         $("#input_max").val("")
         $("#input_min").val("")
         $("#value_interval_div").text("")
+        const dataKeysArr = Object.keys(data.data);
+        console.log(data)
+        if(dataKeysArr.length === 0){
+            alert("暂无任何报告,请先上传!")
+            return
+        }
+
         const initMinValue = data.data.resultFindMaxMinValue[0]._min.chrStart
         const initMaxValue = data.data.resultFindMaxMinValue[0]._max.chrEnd
         reportingId = data.data.resultFindFirstReporting[0].id;
